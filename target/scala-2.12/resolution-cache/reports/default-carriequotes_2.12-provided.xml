@@ -6,8 +6,8 @@
 		module="carriequotes_2.12"
 		revision="0.1"
 		conf="provided"
-		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, pom, scala-tool"
-		date="20180408175635"/>
+		confs="compile, runtime, test, provided, optional, universal, universal-docs, universal-src, windows, docker, linux, rpm, debian, compile-internal, runtime-internal, test-internal, plugin, pom, scala-tool"
+		date="20180418094547"/>
 	<dependencies>
 	</dependencies>
 </ivy-report>
