@@ -6,6 +6,8 @@ version := "0.1"
 
 scalaVersion := "2.12.5"
 
+mainClass := Some("com.nk.carriequotes")
+
 resolvers ++= Seq("Typesafe Repository" at "http://repo.typesafe.com/typesafe/releases/",
   Resolver.bintrayRepo("hseeberger", "maven"))
 
