@@ -23,7 +23,7 @@ object Main extends App with QuoteEndpoint {
 
   override val repository: QuoteRepository = new QuoteRepository()
 
-  Http().bindAndHandle(handler = quoteRoute, interface = "localhost", port = 8080) map { binding =>
+  Http().bindAndHandle(handler = quoteRoute, interface = "0.0.0.0", port = 8080) map { binding =>
     println(s"REST interface bound to ${binding.localAddress}") } recover { case ex =>
     println(s"REST interface could not bind to $host:$port", ex.getMessage)
   }
