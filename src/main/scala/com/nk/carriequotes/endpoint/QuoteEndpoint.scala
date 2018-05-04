@@ -1,19 +1,13 @@
 package com.nk.carriequotes.endpoint
 
-import scala.concurrent.{ExecutionContext, Future}
-
-import akka.http.scaladsl.server.Directives._
-import akka.http.scaladsl.server.RejectionHandler
-import akka.actor.ActorSystem
-import akka.stream.ActorMaterializer
-import akka.http.scaladsl.Http
+import scala.concurrent.{ExecutionContext}
 import akka.http.scaladsl.model._
 import akka.http.scaladsl.server._
-import StatusCodes._
-import Directives._
-import akka.stream.Materializer
-import com.nk.repo.QuoteRepository
 
+import ch.megard.akka.http.cors.scaladsl.CorsDirectives._
+import Directives._
+import com.nk.carriequotes.repo.QuoteRepository
+import akka.stream.Materializer
 
 
 trait QuoteEndpoint {
@@ -29,22 +23,20 @@ trait QuoteEndpoint {
   val problemQuotes: List[String] = List("Hanging with your girlfriends","meeting an ex","")
 
 
-  val quoteRoute = {
-    pathPrefix("quotes") {
-        get {
-          complete {
-            repository.
-              shuffleQuotes(starterQuotes)
-          }
-        }
-        }
 
+  val quoteRoute: Route = cors(){
+    pathPrefix("quote") {
+        get {
+//          complete (201 -> "test")
+          complete (201 -> "tes11t")
+        }
+        }
     }
 
-  implicit def myRejectionHandler =
-    RejectionHandler.newBuilder()
-      .handleNotFound { complete((NotFound, "Not here!")) }
-      .result()
+//  implicit def myRejectionHandler =
+//    RejectionHandler.newBuilder()
+//      .handleNotFound { complete((NotFound, "Not here!")) }
+//      .result()
 
 }
 

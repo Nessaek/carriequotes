@@ -4,7 +4,7 @@
 		module="carriequotes_2.12"
 		revision="0.1"
 		status="integration"
-		publication="20180419000528"
+		publication="20180428124624"
 	>
 		<description>
 		carriequotes
@@ -16,6 +16,14 @@
 		<conf name="test" visibility="public" description="" extends="runtime"/>
 		<conf name="provided" visibility="public" description=""/>
 		<conf name="optional" visibility="public" description=""/>
+		<conf name="universal" visibility="public" description=""/>
+		<conf name="universal-docs" visibility="public" description=""/>
+		<conf name="universal-src" visibility="public" description=""/>
+		<conf name="docker" visibility="public" description=""/>
+		<conf name="windows" visibility="public" description=""/>
+		<conf name="linux" visibility="public" description=""/>
+		<conf name="rpm" visibility="public" description="" extends="linux"/>
+		<conf name="debian" visibility="public" description="" extends="linux"/>
 		<conf name="compile-internal" visibility="private" description="" extends="compile,optional,provided"/>
 		<conf name="runtime-internal" visibility="private" description="" extends="runtime,optional"/>
 		<conf name="test-internal" visibility="private" description="" extends="test,optional,provided"/>
@@ -39,5 +47,7 @@
 		<dependency org="org.json4s" name="json4s-ext_2.12" rev="3.5.2" conf="compile->default(compile)"/>
 		<dependency org="de.heikoseeberger" name="akka-http-json4s_2.12" rev="1.16.0" conf="compile->default(compile)"/>
 		<dependency org="de.heikoseeberger" name="akka-http-jackson_2.12" rev="1.18.0" conf="compile->default(compile)"/>
+		<dependency org="ch.megard" name="akka-http-cors_2.12" rev="0.3.0" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.akka" name="akka-stream_2.12" rev="2.5.12" conf="compile->default(compile)"/>
 	</dependencies>
 </ivy-module>

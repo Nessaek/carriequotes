@@ -1,0 +1,1 @@
+export const LOAD_QUOTE_SUCCESS = 'LOAD_QUOTE_SUCCESS'

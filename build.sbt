@@ -1,4 +1,8 @@
-//enablePlugins(JavaServerAppPackaging)
+enablePlugins(JavaServerAppPackaging)
+enablePlugins(DockerPlugin)
+enablePlugins(AshScriptPlugin)
+
+dockerBaseImage       := "openjdk:jre-alpine"
 
 name := "carriequotes"
 
@@ -20,7 +24,9 @@ libraryDependencies ++= {
     "org.json4s"        %% "json4s-native"   % Json4sVersion,
     "org.json4s"        %% "json4s-ext"      % Json4sVersion,
     "de.heikoseeberger" %% "akka-http-json4s" % "1.16.0",
-    "de.heikoseeberger" %% "akka-http-jackson" % "1.18.0"
+    "de.heikoseeberger" %% "akka-http-jackson" % "1.18.0",
+    "ch.megard" %% "akka-http-cors" % "0.3.0",
+    "com.typesafe.akka" %% "akka-stream" % "2.5.12"
 
   )
 }

@@ -1,4 +1,4 @@
-package com.nk.repo
+package com.nk.carriequotes.repo
 
 import scala.util.Random
 
