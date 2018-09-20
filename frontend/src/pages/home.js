@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux';
 
 import { connect } from "react-redux";
 
-import { loadQuote } from "../actions/index";
+import * as thunks from "../actions/index";
 
 
 function mapStateToProps(state) {
@@ -13,8 +13,9 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
+    console.log(dispatch)
     return {
-        actions: bindActionCreators(loadQuote, dispatch)
+        actions: bindActionCreators(thunks, dispatch)
     };
 }
 
@@ -24,29 +25,30 @@ class ConnectedHome extends Component {
     constructor() {
         super();
         this.state = {
-            output: "test1"
+            quote: "1"
         }
         this.createQuote = this.createQuote.bind(this);
     }
 
 
     componentDidMount() {
-        console.log(this.props)
-        // this.props.fetchQuote()
+
     }
     createQuote() {
-
+        const { actions } = this.props
+        actions.loadQuote();
     }
 
 
 
 
     render() {
+
         return (
             <div>
                 <h3>Carrie Quotes!</h3>
                 <button onClick={() => this.createQuote()}>Create a Carrie Quote</button>
-                <h4>{this.state.output}</h4>
+                <h4>{this.state.quote}</h4>
             </div>
         );
     }

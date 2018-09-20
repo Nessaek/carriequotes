@@ -11,7 +11,6 @@ export function fetchQuote() {
             return response2.text();
         })
         .then(function (response3) {
-
             return response3
         })
         .catch(function (error) {
