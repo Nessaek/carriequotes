@@ -4,7 +4,7 @@
 		module="carriequotes-build"
 		revision="0.1.0-SNAPSHOT"
 		status="integration"
-		publication="20180919203301"
+		publication="20191021172049"
 		e:sbtVersion="1.0" e:scalaVersion="2.12"
 	>
 		<description>
